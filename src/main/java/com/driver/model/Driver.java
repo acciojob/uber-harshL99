@@ -34,6 +34,10 @@ public class Driver{
         return driverId;
     }
 
+    public void setDriverId(int driverId) {
+        this.driverId = driverId;
+    }
+
     public String getMobile() {
         return mobile;
     }

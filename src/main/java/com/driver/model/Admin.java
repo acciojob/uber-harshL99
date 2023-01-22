@@ -7,7 +7,8 @@ public class Admin{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    @Column(name="id")
+    private int AdminId;
     @Column(unique = true,nullable = false,updatable = false)
     private String username;
     @Column(nullable = false)
@@ -22,8 +23,12 @@ public class Admin{
         this.password = password;
     }
 
-    public int getId() {
-        return id;
+    public int getAdminId() {
+        return AdminId;
+    }
+
+    public void setAdminId(int adminId) {
+        AdminId = adminId;
     }
 
     public String getUsername() {
