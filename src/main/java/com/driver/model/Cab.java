@@ -1,6 +1,10 @@
 package com.driver.model;
 
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import org.springframework.beans.factory.annotation.Value;
+
+
 import javax.persistence.*;
 
 @Entity
@@ -10,6 +14,7 @@ public class Cab{
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private int perKmRate;
+    @Value("#{8>3}")
     private boolean available;
 
     @OneToOne
