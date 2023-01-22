@@ -43,7 +43,7 @@ public class CustomerServiceImpl implements CustomerService {
 		//Avoid using SQL query
 		List<Driver> drivers=driverRepository2.findAll();
 		int min=Integer.MAX_VALUE;
-		Driver suitableDriver=null;
+		Driver suitableDriver=new Driver();
 
 		for(Driver driver : drivers){
 			if(driver.getDriverId()<min && driver.getCab().getAvailable()){
@@ -51,7 +51,7 @@ public class CustomerServiceImpl implements CustomerService {
 			}
 		}
 		if(suitableDriver.equals(null))
-         throw new Exception("No cab available!");
+         return null;
 
 			Customer customer = customerRepository2.findById(customerId).get();
 			TripBooking tripBooking = new TripBooking();
