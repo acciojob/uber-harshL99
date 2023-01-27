@@ -18,7 +18,7 @@ public class Customer{
 
     //Will be a parent for TripBooking class...
     @OneToMany(mappedBy = "customer",cascade = CascadeType.ALL)
-    private List<TripBooking> tripBookingList=new ArrayList<>();
+    private List<TripBooking> tripBookings=new ArrayList<>();
 
     public Customer() {
     }
@@ -52,11 +52,11 @@ public class Customer{
         this.password = password;
     }
 
-    public List<TripBooking> getTripBookingList() {
-        return tripBookingList;
+    public List<TripBooking> getTripBookings() {
+        return tripBookings;
     }
 
-    public void setTripBookingList(List<TripBooking> tripBookingList) {
-        this.tripBookingList = tripBookingList;
+    public void setTripBookings(List<TripBooking> tripBookingList) {
+        this.tripBookings = tripBookingList;
     }
 }
